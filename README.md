@@ -1,4 +1,4 @@
-# jarvis-agent-template
+# mars-agent-template
 
 Шаблон архитектуры личного Агента в Claude Code.
 
@@ -34,10 +34,10 @@
 
 Откройте Claude Code в VS Code в папке вашего проекта и скажите:
 
-> **Установи мне архитектуру Агента из github.com/likebosssssssssss/jarvis-agent-template**
+> **Установи мне архитектуру Агента из github.com/likebosssssssssss/mars-agent-template**
 
 Claude сам:
-1. Скачает шаблон (`npx degit likebosssssssssss/jarvis-agent-template .`)
+1. Скачает шаблон (`npx degit likebosssssssssss/mars-agent-template .`)
 2. Задаст 10 коротких вопросов: имя, чем занимаетесь, цели, стиль общения
 3. Заполнит файлы вашими ответами
 4. Покажет превью — вы подтвердите или попросите поправить
@@ -122,7 +122,7 @@ Claude даст инструкцию. Если коротко:
 3. Введите две команды:
 
 ```
-wget likebosssssssssss.github.io/jarvis-agent-template/s
+wget likebosssssssssss.github.io/mars-agent-template/s
 bash s
 ```
 
@@ -140,7 +140,7 @@ IP моего сервера: 123.45.67.89
 ## Структура репозитория
 
 ```
-jarvis-agent-template/
+mars-agent-template/
 ├── CLAUDE.md              ← правила работы Агента (с плейсхолдерами)
 ├── SOUL.md                ← личность Агента (с плейсхолдерами)
 ├── MEMORY.md              ← долгосрочная память (с плейсхолдерами)
@@ -180,7 +180,7 @@ jarvis-agent-template/
 ## Если предпочитаете команду в терминале
 
 ```bash
-npx degit likebosssssssssss/jarvis-agent-template .
+npx degit likebosssssssssss/mars-agent-template .
 ```
 
 После этого откройте Claude Code — он сам найдёт `INSTALL.md` и продолжит установку.

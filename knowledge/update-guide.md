@@ -121,5 +121,5 @@ bash /home/agent/.agent/bot/update-bot.sh
 
 **Полная переустановка (последний вариант, если ничего не помогло — данные сохранятся):**
 ```
-curl -sL https://raw.githubusercontent.com/likebosssssssssss/jarvis-agent-template/main/setup-server.sh | bash
+curl -sL https://raw.githubusercontent.com/likebosssssssssss/mars-agent-template/main/setup-server.sh | bash
 ```

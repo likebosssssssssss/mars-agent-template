@@ -7,7 +7,7 @@ description: |
   «как распределить задачи», «спланируй день», «утренний план», «расставь приоритеты на день».
 license: MIT
 metadata:
-  author: jarvis-agent-template
+  author: mars-agent-template
   version: "1.0.0"
 ---
 

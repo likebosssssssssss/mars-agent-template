@@ -1,10 +1,10 @@
-# jarvis-agent-template — инструкции для Claude Code
+# mars-agent-template — инструкции для Claude Code
 
 > Этот файл Claude Code читает автоматически при открытии папки. Здесь — контекст проекта и маршрутизация: что делать в зависимости от запроса пользователя.
 
 ## Что это за проект
 
-Шаблон архитектуры персонального AI-агента. Репозиторий: github.com/likebosssssssssss/jarvis-agent-template.
+Шаблон архитектуры персонального AI-агента. Репозиторий: github.com/likebosssssssssss/mars-agent-template.
 
 Архитектура = набор markdown-файлов + настроек + бота, которые превращают Claude Code в персонального Агента:
 - CLAUDE.md — правила работы

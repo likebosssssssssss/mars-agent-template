@@ -14,7 +14,7 @@
  *   - Хранение в ~/.agent/.env (один файл, формат KEY=value)
  *
  * Адаптировано из Agent Factory templates/bot/index.js.
- * License: MIT (как и сам jarvis-agent-template).
+ * License: MIT (как и сам mars-agent-template).
  */
 
 import { InlineKeyboard } from "grammy";

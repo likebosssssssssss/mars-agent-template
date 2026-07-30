@@ -34,7 +34,7 @@ echo "=== Agent Bot Update ==="
 echo "Bot directory: $BOT_DIR"
 
 # GitHub raw base URL
-REPO="likebosssssssssss/jarvis-agent-template"
+REPO="likebosssssssssss/mars-agent-template"
 # BRANCH можно переопределить через env var: BRANCH=feature/foo bash update-bot.sh
 # Полезно для тестирования предрелизных версий на одном волонтёре.
 BRANCH="${BRANCH:-main}"
@@ -135,7 +135,7 @@ else
   systemctl stop code-tunnel.service 2>/dev/null || true
   systemctl disable code-tunnel.service 2>/dev/null || true
 
-  TUNNEL_TEMPLATES_DIR="/tmp/jarvis-tunnel-templates"
+  TUNNEL_TEMPLATES_DIR="/tmp/mars-tunnel-templates"
   TUNNEL_BASE_URL="https://raw.githubusercontent.com/$REPO/$BRANCH/templates/vscode-tunnel"
   TUNNEL_FILES="install-vscode-tunnel.sh agent-tunnel.service tunnel-ctl.path tunnel-ctl.service tunnel-stop.path tunnel-stop.service"
 

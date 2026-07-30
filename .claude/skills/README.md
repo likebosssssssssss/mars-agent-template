@@ -32,7 +32,7 @@
 ```
 Поставь мне скилл discovery-interview от parcadei.
 Адрес: https://github.com/parcadei/Continuous-Claude-v3
-Положи в папку .claude/skills моего проекта jarvis.
+Положи в папку .claude/skills моего проекта mars.
 ```
 
 ---
@@ -47,7 +47,7 @@
 
 ```
 Поставь мне скилл content-creator из github.com/Shubhamsaboo/awesome-llm-apps.
-Положи в папку .claude/skills моего проекта jarvis.
+Положи в папку .claude/skills моего проекта mars.
 ```
 
 ---
@@ -62,7 +62,7 @@
 
 ```
 Поставь мне скилл fullstack-developer из github.com/Shubhamsaboo/awesome-llm-apps.
-Положи в папку .claude/skills моего проекта jarvis.
+Положи в папку .claude/skills моего проекта mars.
 ```
 
 > Если ставите Писателя и Разработчика по очереди — это нормально, оба из одного репозитория.
@@ -80,7 +80,7 @@
 ```
 Поставь мне скилл frontend-design от Anthropic.
 Адрес: https://github.com/anthropics/claude-code
-Положи в папку .claude/skills моего проекта jarvis.
+Положи в папку .claude/skills моего проекта mars.
 ```
 
 ---
@@ -139,15 +139,15 @@
 **Через окно Claude Code (рекомендуется):**
 
 ```
-Скачай папку .claude/skills из репозитория likebosssssssssss/jarvis-agent-template
-в мой проект jarvis. Адрес папки на GitHub:
-https://github.com/likebosssssssssss/jarvis-agent-template/tree/main/.claude/skills
+Скачай папку .claude/skills из репозитория likebosssssssssss/mars-agent-template
+в мой проект mars. Адрес папки на GitHub:
+https://github.com/likebosssssssssss/mars-agent-template/tree/main/.claude/skills
 ```
 
 **Или вручную через terminal** (для продвинутых):
 
 ```bash
-npx degit likebosssssssssss/jarvis-agent-template/.claude/skills .claude/skills
+npx degit likebosssssssssss/mars-agent-template/.claude/skills .claude/skills
 ```
 
 После этого продолжите установку скиллов по фразам из этого файла.
@@ -157,7 +157,7 @@ npx degit likebosssssssssss/jarvis-agent-template/.claude/skills .claude/skills
 ## Текущая структура
 
 ```
-jarvis/
+mars/
 └── .claude/
     └── skills/
         ├── README.md                ← этот файл

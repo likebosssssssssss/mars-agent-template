@@ -2,7 +2,7 @@
 # ============================================================
 # Установка рабочего окружения для AI-агента на VPS
 #
-# Запуск: curl -sL https://raw.githubusercontent.com/likebosssssssssss/jarvis-agent-template/main/setup-server.sh | bash
+# Запуск: curl -sL https://raw.githubusercontent.com/likebosssssssssss/mars-agent-template/main/setup-server.sh | bash
 # ============================================================
 set -euo pipefail
 
@@ -94,14 +94,14 @@ mkdir -p "$HOME_DIR/.claude/skills"
 
 # Дефолтные настройки Claude Code (светофор разрешений)
 if [ ! -f "$HOME_DIR/.claude/settings.json" ]; then
-  curl -fsSL https://raw.githubusercontent.com/likebosssssssssss/jarvis-agent-template/main/.claude/settings.json \
+  curl -fsSL https://raw.githubusercontent.com/likebosssssssssss/mars-agent-template/main/.claude/settings.json \
     -o "$HOME_DIR/.claude/settings.json" 2>/dev/null \
     && log "Настройки Claude Code установлены" \
     || warn "Не удалось скачать settings.json — можно добавить позже"
 fi
 
 # Скиллы (навыки агента)
-SKILLS_BASE="https://raw.githubusercontent.com/likebosssssssssss/jarvis-agent-template/main/.claude/skills"
+SKILLS_BASE="https://raw.githubusercontent.com/likebosssssssssss/mars-agent-template/main/.claude/skills"
 for SKILL in discovery-interview content-creator fullstack-developer frontend-design; do
   if [ ! -f "$HOME_DIR/.claude/skills/$SKILL/SKILL.md" ]; then
     mkdir -p "$HOME_DIR/.claude/skills/$SKILL"
@@ -131,8 +131,8 @@ log "Папки готовы: workspace/ (файлы агента), projects/ (�
 # (бот в /connect вычисляет так же — get'ит то же имя).
 step "5/6. VS Code Tunnel"
 
-TUNNEL_TEMPLATES_DIR="/tmp/jarvis-tunnel-templates"
-TUNNEL_BASE_URL="https://raw.githubusercontent.com/likebosssssssssss/jarvis-agent-template/main/templates/vscode-tunnel"
+TUNNEL_TEMPLATES_DIR="/tmp/mars-tunnel-templates"
+TUNNEL_BASE_URL="https://raw.githubusercontent.com/likebosssssssssss/mars-agent-template/main/templates/vscode-tunnel"
 TUNNEL_FILES=(
   "install-vscode-tunnel.sh"
   "agent-tunnel.service"
