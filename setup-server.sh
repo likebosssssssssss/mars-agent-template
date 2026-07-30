@@ -102,14 +102,14 @@ fi
 
 # Скиллы (навыки агента)
 SKILLS_BASE="https://raw.githubusercontent.com/likebosssssssssss/mars-agent-template/main/.claude/skills"
-for SKILL in discovery-interview content-creator fullstack-developer frontend-design; do
+for SKILL in discovery-interview content-creator fullstack-developer frontend-design reminder; do
   if [ ! -f "$HOME_DIR/.claude/skills/$SKILL/SKILL.md" ]; then
     mkdir -p "$HOME_DIR/.claude/skills/$SKILL"
     curl -fsSL "$SKILLS_BASE/$SKILL/SKILL.md" \
       -o "$HOME_DIR/.claude/skills/$SKILL/SKILL.md" 2>/dev/null || true
   fi
 done
-log "Скиллы установлены (4 навыка)"
+log "Скиллы установлены (5 навыков)"
 
 # Симлинк для единой памяти (бот и VS Code читают один CLAUDE.md)
 ln -sf "$HOME_DIR/workspace/CLAUDE.md" "$HOME_DIR/CLAUDE.md"
