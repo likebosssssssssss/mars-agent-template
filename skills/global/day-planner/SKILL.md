@@ -7,7 +7,7 @@ description: |
   «как распределить задачи», «спланируй день», «утренний план», «расставь приоритеты на день».
 license: MIT
 metadata:
-  author: jarvis-architect
+  author: jarvis-agent-template
   version: "1.0.0"
 ---
 
@@ -130,7 +130,7 @@ metadata:
 - Контент-план @neurobussines на следующую неделю — собрать идеи
 
 ❗ Не берём сегодня
-- jarvis-architect proxy-tunnel — нужны 4+ часа, поставь в четверг
+- example proxy-tunnel — нужны 4+ часа, поставь в четверг
 - День-планер day-planner документация — низкий приоритет
 
 Вопрос: Озман подтвердил время созвона на 14:00?

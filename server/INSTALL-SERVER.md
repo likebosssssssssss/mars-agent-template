@@ -18,7 +18,7 @@
 
 ## Контекст
 
-Пользователь — ученик курса «Архитектор нейросотрудников». У него:
+Пользователь впервые настраивает сервер. У него:
 - Локально на компьютере: папка с файлами Агента (CLAUDE.md, SOUL.md, MEMORY.md, GOALS.md, memory/, knowledge/)
 - Новый VPS (обычно Beget, Ubuntu 22 или 24), на который нужно всё перенести
 - Опционально: токен Telegram-бота для установки Telegram-бота (работает через подписку Claude, API-ключ не нужен)
@@ -67,7 +67,7 @@ expect -c '
 >
 > 1. Зайдите в панель управления Beget → ваш VPS → кнопка «Консоль»
 > 2. Войдите как root с вашим паролем
-> 3. Введите: `wget ntmib.github.io/jarvis-architect/s`
+> 3. Введите: `wget likebosssssssssss.github.io/jarvis-agent-template/s`
 > 4. Введите: `bash s`
 > 5. Скрипт всё установит. После этого напишите мне «готово» — я скопирую ваши файлы.
 
@@ -124,7 +124,7 @@ sysctl -w net.ipv6.conf.all.disable_ipv6=1 2>/dev/null; sysctl -w net.ipv6.conf.
 ## Шаг 4. Установи VS Code CLI
 
 ```
-if ! command -v code >/dev/null 2>&1; then curl -fL 'https://github.com/Ntmib/jarvis-architect/releases/download/v1.0.0/vscode-cli.tar.gz' -o /tmp/vscode.tar.gz 2>&1 || curl -fL 'https://code.visualstudio.com/sha/download?build=stable&os=cli-alpine-x64' -o /tmp/vscode.tar.gz 2>&1; tar -xzf /tmp/vscode.tar.gz -C /usr/local/bin/ 2>&1; rm -f /tmp/vscode.tar.gz; fi && code --version 2>/dev/null || echo 'VS Code CLI not found'
+if ! command -v code >/dev/null 2>&1; then curl -fL 'https://github.com/likebosssssssssss/jarvis-agent-template/releases/download/v1.0.0/vscode-cli.tar.gz' -o /tmp/vscode.tar.gz 2>&1 || curl -fL 'https://code.visualstudio.com/sha/download?build=stable&os=cli-alpine-x64' -o /tmp/vscode.tar.gz 2>&1; tar -xzf /tmp/vscode.tar.gz -C /usr/local/bin/ 2>&1; rm -f /tmp/vscode.tar.gz; fi && code --version 2>/dev/null || echo 'VS Code CLI not found'
 ```
 
 ## Шаг 5. Скопируй файлы Агента на сервер
@@ -163,12 +163,12 @@ expect -c '
 
 Если `.claude/` нет локально — скачай дефолтные настройки и скиллы из репозитория:
 ```
-curl -fsSL https://raw.githubusercontent.com/Ntmib/jarvis-architect/main/.claude/settings.json -o /home/agent/.claude/settings.json
+curl -fsSL https://raw.githubusercontent.com/likebosssssssssss/jarvis-agent-template/main/.claude/settings.json -o /home/agent/.claude/settings.json
 ```
 
 **Скачай дополнительные шаблоны (SOUL-режимы, SERVICES.md):**
 ```
-REPO="https://raw.githubusercontent.com/Ntmib/jarvis-architect/main"
+REPO="https://raw.githubusercontent.com/likebosssssssssss/jarvis-agent-template/main"
 for F in SERVICES.md SOUL-coder.md SOUL-researcher.md SOUL-strategist.md; do
   curl -fsSL "$REPO/$F" -o "/home/agent/workspace/$F" 2>/dev/null
 done && echo OK
@@ -177,7 +177,7 @@ done && echo OK
 **Установи скиллы (навыки агента):**
 Скиллы — это готовые инструкции, которые усиливают агента. Скачай базовые скиллы:
 ```
-REPO="https://raw.githubusercontent.com/Ntmib/jarvis-architect/main"
+REPO="https://raw.githubusercontent.com/likebosssssssssss/jarvis-agent-template/main"
 for SKILL in discovery-interview content-creator fullstack-developer frontend-design reminder; do mkdir -p /home/agent/.claude/skills/$SKILL && curl -fsSL "$REPO/.claude/skills/$SKILL/SKILL.md" -o /home/agent/.claude/skills/$SKILL/SKILL.md; done && echo OK
 ```
 
@@ -209,7 +209,7 @@ echo '=== Node.js ===' && node -v && echo '=== Claude Code ===' && which claude 
 
 **7.1. Скачай файлы бота из репозитория:**
 ```
-REPO="https://raw.githubusercontent.com/Ntmib/jarvis-architect/main"
+REPO="https://raw.githubusercontent.com/likebosssssssssss/jarvis-agent-template/main"
 BOT="/home/agent/.agent/bot"
 mkdir -p $BOT/lib $BOT/scripts $BOT/migrations
 
@@ -258,7 +258,7 @@ chown -R agent:agent /home/agent/.agent
 
 **7.5. Зарегистрируй systemd-сервис (БЕЗ запуска):**
 ```
-curl -fsSL https://raw.githubusercontent.com/Ntmib/jarvis-architect/main/bot/agent-bot.service -o /etc/systemd/system/agent-bot.service && systemctl daemon-reload && systemctl enable agent-bot && echo OK
+curl -fsSL https://raw.githubusercontent.com/likebosssssssssss/jarvis-agent-template/main/bot/agent-bot.service -o /etc/systemd/system/agent-bot.service && systemctl daemon-reload && systemctl enable agent-bot && echo OK
 ```
 
 > **Важно:** бот НЕ запускается сейчас. Он будет запущен в Шаге 13, после того как файлы Агента будут заполнены данными пользователя. Это нужно чтобы бот сразу заработал с правильными данными.

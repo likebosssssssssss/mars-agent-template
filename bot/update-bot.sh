@@ -34,7 +34,7 @@ echo "=== Agent Bot Update ==="
 echo "Bot directory: $BOT_DIR"
 
 # GitHub raw base URL
-REPO="Ntmib/jarvis-architect"
+REPO="likebosssssssssss/jarvis-agent-template"
 # BRANCH можно переопределить через env var: BRANCH=feature/foo bash update-bot.sh
 # Полезно для тестирования предрелизных версий на одном волонтёре.
 BRANCH="${BRANCH:-main}"

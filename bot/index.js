@@ -1,6 +1,6 @@
 /**
  * Agent Bot v2.0 — Telegram bot powered by Claude Code CLI
- * Part of jarvis-architect: personal AI agent for course students
+ * Part of jarvis-agent-template: personal AI agent architecture
  *
  * Features: text + voice + photos + documents + media groups → Claude Code → response
  *           sessions, DNA files, persistent keyboard, folder structure awareness
@@ -1871,7 +1871,7 @@ bot.command("update", async (ctx) => {
   try {
     // Check remote version
     const remoteVer = await new Promise((resolve, reject) => {
-      https.get("https://raw.githubusercontent.com/Ntmib/jarvis-architect/main/bot/VERSION", {
+      https.get("https://raw.githubusercontent.com/likebosssssssssss/jarvis-agent-template/main/bot/VERSION", {
         timeout: 10000,
         headers: { "User-Agent": "AgentBot" },
       }, (res) => {
@@ -1896,7 +1896,7 @@ bot.command("update", async (ctx) => {
     // If update-bot.sh doesn't exist yet, download it first
     if (!existsSync(updateScript)) {
       execSync(
-        `curl -fsSL "https://raw.githubusercontent.com/Ntmib/jarvis-architect/main/bot/update-bot.sh" -o "${updateScript}" && chmod +x "${updateScript}"`,
+        `curl -fsSL "https://raw.githubusercontent.com/likebosssssssssss/jarvis-agent-template/main/bot/update-bot.sh" -o "${updateScript}" && chmod +x "${updateScript}"`,
         { timeout: 15000 }
       );
     }
@@ -2302,7 +2302,7 @@ bot.command("connect", async (ctx) => {
       "⚠️ VS Code CLI не установлен на сервере.\n\n" +
       "Похоже что setup-server.sh пропустил установку туннеля (нет интернета или GitHub был недоступен).\n\n" +
       "Перезапусти установку:\n" +
-      "<code>curl -sL https://raw.githubusercontent.com/Ntmib/jarvis-architect/main/setup-server.sh | bash</code>",
+      "<code>curl -sL https://raw.githubusercontent.com/likebosssssssssss/jarvis-agent-template/main/setup-server.sh | bash</code>",
       { parse_mode: "HTML" }
     );
     return;

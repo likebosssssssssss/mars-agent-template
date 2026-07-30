@@ -139,15 +139,15 @@
 **Через окно Claude Code (рекомендуется):**
 
 ```
-Скачай папку .claude/skills из репозитория Ntmib/jarvis-architect
+Скачай папку .claude/skills из репозитория likebosssssssssss/jarvis-agent-template
 в мой проект jarvis. Адрес папки на GitHub:
-https://github.com/Ntmib/jarvis-architect/tree/main/.claude/skills
+https://github.com/likebosssssssssss/jarvis-agent-template/tree/main/.claude/skills
 ```
 
 **Или вручную через terminal** (для продвинутых):
 
 ```bash
-npx degit Ntmib/jarvis-architect/.claude/skills .claude/skills
+npx degit likebosssssssssss/jarvis-agent-template/.claude/skills .claude/skills
 ```
 
 После этого продолжите установку скиллов по фразам из этого файла.
