@@ -119,6 +119,30 @@ chown -R "$USERNAME:$USERNAME" "$HOME_DIR"
 chown -h "$USERNAME:$USERNAME" "$HOME_DIR/CLAUDE.md"
 log "Папки готовы: workspace/ (файлы агента), projects/ (проекты)"
 
+# Git-версионирование workspace/ — только DNA-файлы и knowledge/. НИКОГДА не
+# .media/ (бот сохраняет туда всё, что ему прислали в Telegram — фото, доки,
+# иногда личные/финансовые файлы) и не остальные файлы в корне workspace/.
+# Даёт версионную историю регламента и защиту от порчи кодировки при будущих
+# правках через drag-and-drop (см. знание server-ops.md).
+cat > "$HOME_DIR/workspace/.gitignore" <<'GITIGNORE_EOF'
+*
+!.gitignore
+!CLAUDE.md
+!SOUL.md
+!MEMORY.md
+!GOALS.md
+!LEARNED.md
+!USER.md
+!MISSION.md
+!PROJECTS.md
+!PREFERENCES.md
+!knowledge/
+!knowledge/**
+GITIGNORE_EOF
+chown "$USERNAME:$USERNAME" "$HOME_DIR/workspace/.gitignore"
+sudo -u "$USERNAME" bash -c "cd '$HOME_DIR/workspace' && git init -q -b main 2>/dev/null; git config user.email 'agent@localhost'; git config user.name 'Agent'"
+log "workspace/ версионируется через git (только DNA-файлы, .gitignore настроен)"
+
 # =====================
 # 5. VS Code Tunnel (через бот: /connect)
 # =====================
