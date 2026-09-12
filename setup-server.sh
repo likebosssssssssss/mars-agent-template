@@ -119,6 +119,30 @@ chown -R "$USERNAME:$USERNAME" "$HOME_DIR"
 chown -h "$USERNAME:$USERNAME" "$HOME_DIR/CLAUDE.md"
 log "Папки готовы: workspace/ (файлы агента), projects/ (проекты)"
 
+# Git-версионирование workspace/ — только DNA-файлы и knowledge/. НИКОГДА не
+# .media/ (бот сохраняет туда всё, что ему прислали в Telegram — фото, доки,
+# иногда личные/финансовые файлы) и не остальные файлы в корне workspace/.
+# Даёт версионную историю регламента и защиту от порчи кодировки при будущих
+# правках через drag-and-drop (см. знание server-ops.md).
+cat > "$HOME_DIR/workspace/.gitignore" <<'GITIGNORE_EOF'
+*
+!.gitignore
+!CLAUDE.md
+!SOUL.md
+!MEMORY.md
+!GOALS.md
+!LEARNED.md
+!USER.md
+!MISSION.md
+!PROJECTS.md
+!PREFERENCES.md
+!knowledge/
+!knowledge/**
+GITIGNORE_EOF
+chown "$USERNAME:$USERNAME" "$HOME_DIR/workspace/.gitignore"
+sudo -u "$USERNAME" bash -c "cd '$HOME_DIR/workspace' && git init -q -b main 2>/dev/null; git config user.email 'agent@localhost'; git config user.name 'Agent'"
+log "workspace/ версионируется через git (только DNA-файлы, .gitignore настроен)"
+
 # =====================
 # 5. VS Code Tunnel (через бот: /connect)
 # =====================
@@ -186,6 +210,15 @@ echo "2. Слева найдите раздел «Удалённый обозр�
 echo "3. В разделе Tunnels появится ваш сервер — нажмите на него"
 echo "4. Перетащите мышкой ваши DNA-файлы (SOUL.md, CLAUDE.md и т.д.)"
 echo "   в папку /home/agent/workspace/"
+echo ""
+echo "⚠ ВАЖНО: после перетаскивания откройте любой файл с кириллицей на"
+echo "  сервере и проверьте, что текст читается нормально, а не превратился"
+echo "  в кракозябры. Перетаскивание через VS Code иногда портит кодировку"
+echo "  русского текста."
+echo "  Если текст испортился — не перетаскивайте, а на СВОЁМ компьютере"
+echo "  выполните (замените путь на свой):"
+echo "  scp SOUL.md CLAUDE.md MEMORY.md GOALS.md root@<IP-сервера>:/home/agent/workspace/"
+echo "  Этот способ передаёт файлы побайтово, без риска испортить кодировку."
 echo ""
 echo "Ваш агент будет жить в: /home/agent/workspace/"
 echo "Проекты агента будут в: /home/agent/projects/"
